@@ -14,7 +14,7 @@ from rank_llm.retrieve import Retriever
 
 # By default uses BM25 for retrieval
 dataset_name = "dl19"
-requests = Retriever.from_dataset_with_prebuilt_index(dataset_name)
+requests = Retriever.from_dataset_with_prebuilt_index(dataset_name)[:1]
 model_coordinator = SafeGenai("gemini-2.0-flash-001", 4096, keys=get_genai_api_key())
 reranker = Reranker(model_coordinator)
 kwargs = {"populate_invocations_history": True}

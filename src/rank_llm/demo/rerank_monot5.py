@@ -13,7 +13,7 @@ from rank_llm.rerank.pointwise.monot5 import MonoT5
 from rank_llm.retrieve.retriever import Retriever
 
 dataset = "dl19"
-requests = Retriever.from_dataset_with_prebuilt_index(dataset, k=100)
+requests = Retriever.from_dataset_with_prebuilt_index(dataset, k=100)[:1]
 monot5_model_coordinator = MonoT5("castorini/monot5-3b-msmarco-10k")
 m_reranker = Reranker(monot5_model_coordinator)
 kwargs = {"populate_invocations_history": True}

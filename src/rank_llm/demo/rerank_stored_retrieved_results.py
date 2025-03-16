@@ -11,7 +11,7 @@ from rank_llm.data import DataWriter, read_requests_from_file
 from rank_llm.rerank.listwise import ZephyrReranker
 
 file_name = "retrieve_results/BM25/retrieve_results_dl23_top20.jsonl"
-requests = read_requests_from_file(file_name)
+requests = read_requests_from_file(file_name)[:1]
 
 reranker = ZephyrReranker()
 rerank_results = reranker.rerank_batch(requests=requests)

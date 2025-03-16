@@ -16,7 +16,7 @@ from rank_llm.retrieve import Retriever
 
 # By default uses BM25 for retrieval
 dataset_name = "dl19"
-requests = Retriever.from_dataset_with_prebuilt_index(dataset_name)
+requests = Retriever.from_dataset_with_prebuilt_index(dataset_name)[:1]
 model_coordinator = RankListwiseOSLLM(
     model="Qwen/Qwen2.5-7B-Instruct",
     vllm_batched=True,

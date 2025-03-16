@@ -13,7 +13,7 @@ from rank_llm.rerank.pairwise.duot5 import DuoT5
 from rank_llm.retrieve.retriever import Retriever
 
 dataset = "dl20"
-requests = Retriever.from_dataset_with_prebuilt_index(dataset, k=50)
+requests = Retriever.from_dataset_with_prebuilt_index(dataset, k=50)[:1]
 duot5_model_coordinator = DuoT5("castorini/duot5-3b-msmarco-10k")
 m_reranker = Reranker(duot5_model_coordinator)
 kwargs = {"populate_invocations_history": True}

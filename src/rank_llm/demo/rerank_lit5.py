@@ -16,7 +16,7 @@ from rank_llm.rerank.listwise.lit5_reranker import (
 from rank_llm.retrieve.retriever import Retriever
 
 dataset = "dl19"
-requests = Retriever.from_dataset_with_prebuilt_index(dataset, k=100)
+requests = Retriever.from_dataset_with_prebuilt_index(dataset, k=100)[:1]
 
 # Rerank multiple requests with LiT5 Distill
 lit5_d_model_coordinator = LiT5DistillReranker("castorini/LiT5-Distill-large")
